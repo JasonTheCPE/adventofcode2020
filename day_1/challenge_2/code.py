@@ -2,6 +2,7 @@
 
 from typing import List, Set, Optional
 
+
 def find_twos_product(value_set: Set[int], target_value: int) -> int:
     """
     Find two numbers in a list that sum to a target value and returns their
@@ -18,6 +19,7 @@ def find_twos_product(value_set: Set[int], target_value: int) -> int:
         paired_value = target_value - value
         if paired_value in value_set:
             return value * paired_value
+
 
 def find_threes_product(values: List[int], target_value: int = 2020) -> int:
     """

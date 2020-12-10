@@ -3,6 +3,7 @@
 from typing import List
 import re
 
+
 def find_valid_passwords(values: List[str]) -> int:
     """
     Find the number of valid passwords in a list containing both the policy and
@@ -15,7 +16,8 @@ def find_valid_passwords(values: List[str]) -> int:
     Returns:
         int: The number of valid passwords
     """
-    search_reg = re.compile(r"\b(?P<min>[0-9]+)-(?P<max>[0-9]+)\s(?P<letter>[a-z]):\s(?P<password>[a-z]+)")
+    search_reg = re.compile(
+        r"\b(?P<min>[0-9]+)-(?P<max>[0-9]+)\s(?P<letter>[a-z]):\s(?P<password>[a-z]+)")
     valid_password_count = 0
 
     for value in values:
@@ -28,7 +30,7 @@ def find_valid_passwords(values: List[str]) -> int:
 
         if int(results.group("min")) <= target_char_count <= int(results.group("max")):
             valid_password_count += 1
-    
+
     return valid_password_count
 
 
